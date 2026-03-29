@@ -52,6 +52,7 @@ arc::Future<> sleep(int s) {
 
 /// Easy way of showing an error notification in-game
 inline void showErrorNotification(const std::string& msg) {
+	if (!Mod::get()->getSettingValue<bool>("show-errors")) return;
 	geode::queueInMainThread([msg] {
 		Notification::create(msg, NotificationIcon::Error)->show();
 	});

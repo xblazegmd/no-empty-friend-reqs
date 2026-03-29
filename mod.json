@@ -18,16 +18,9 @@
 		"source": "https://github.com/xblazegmd/no-empty-friend-reqs"
 	},
 	"settings": {
-		"timeout": {
-			"type": "int",
-			"name": "Timeout",
-			"description": "The timeout for any requests sent to the GD servers",
-			"default": 10,
-			"min": 10,
-			"max": 60,
-			"control": {
-				"slider": true
-			}
+		"basic": {
+			"type": "title",
+			"name": "Basic Options"
 		},
 		"interval": {
 			"type": "int",
@@ -46,6 +39,27 @@
 			"description": "The amount of time this will wait after declining a friend request\n\n<cr>Setting this to a low enough value may get you rate limited, be careful!</c>",
 			"default": 10,
 			"min": 5,
+			"max": 60,
+			"control": {
+				"slider": true
+			}
+		},
+		"show-errors": {
+			"type": "bool",
+			"name": "Show Error Notifications",
+			"description": "Whether to show notifications in the case of any errors",
+			"default": true
+		},
+		"advanced": {
+			"type": "title",
+			"name": "Advanced Options"
+		},
+		"timeout": {
+			"type": "int",
+			"name": "Timeout",
+			"description": "The timeout for any requests sent to the GD servers",
+			"default": 10,
+			"min": 10,
 			"max": 60,
 			"control": {
 				"slider": true
