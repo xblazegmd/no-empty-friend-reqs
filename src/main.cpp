@@ -13,7 +13,7 @@ arc::Future<Result<std::string>> requestGDServers(
 	auto req = web::WebRequest()
 		.userAgent("")
 		.bodyString(body)
-		.timeout(std::chrono::seconds(10));
+		.timeout(std::chrono::seconds(Mod::get()->getSettingValue<int64_t>("timeout")));
 
 	auto res = co_await req.post("https://www.boomlings.com/database/" + endpoint);
 	if (!res.ok()) {
@@ -43,6 +43,11 @@ utils::StringMap<std::string> formatServerResponse(const std::string& res) {
 	}
 
 	return ret;
+}
+
+/// zzz...
+arc::Future<> sleep(int s) {
+	co_await arc::sleep(asp::Duration::fromSecs(s));
 }
 
 /// Easy way of showing an error notification in-game
@@ -92,7 +97,7 @@ $on_game(Loaded) {
 						}
 
 						// To be 100% sure this won't get me rate limited
-						co_await arc::sleep(asp::Duration::fromSecs(5));
+						co_await sleep(Mod::get()->getSettingValue<int64_t>("cooldown"));
 					} else {
 						log::debug("Skipping friend request by '{}'", friendReq["1"]);
 					}
@@ -102,7 +107,7 @@ $on_game(Loaded) {
 				showErrorNotification(fmt::format("Could not get friend requests: {}", res.unwrapErr()));
 			}
 
-			co_await arc::sleep(asp::Duration::fromSecs(200));
+			co_await sleep(Mod::get()->getSettingValue<int64_t>("interval"));
 		}
 	});
 }

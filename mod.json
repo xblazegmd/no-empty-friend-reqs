@@ -13,5 +13,40 @@
 	"description": "For those who hate empty friend reqs (aka me)",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0"
+	},
+	"settings": {
+		"timeout": {
+			"type": "int",
+			"name": "Timeout",
+			"description": "The timeout for any requests sent to the GD servers",
+			"default": 10,
+			"min": 10,
+			"max": 60,
+			"control": {
+				"slider": true
+			}
+		},
+		"interval": {
+			"type": "int",
+			"name": "Interval",
+			"description": "The interval (in seconds) in which the mod will check for empty friend requests\n\n120: 2 minutes, 180: 3 minutes, 240: 4 minutes, 300: 5 minutes, 360: 6 minutes, 420: 7 minutes, 480: 8 minutes, 540: 9 minutes, 600: 10 minutes",
+			"default": 300,
+			"min": 120,
+			"max": 600,
+			"control": {
+				"slider": true
+			}
+		},
+		"cooldown": {
+			"type": "int",
+			"name": "Cooldown",
+			"description": "The amount of time this will wait after declining a friend request\n\n<cr>Setting this to a low enough value may get you rate limited, be careful!</c>",
+			"default": 10,
+			"min": 5,
+			"max": 60,
+			"control": {
+				"slider": true
+			}
+		}
 	}
 }
