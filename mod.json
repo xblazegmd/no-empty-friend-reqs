@@ -8,7 +8,7 @@
 	},
 	"id": "xblazegmd.no-empty-friend-requests",
 	"name": "No Empty Friend Requests",
-	"version": "v1.0.0",
+	"version": "v1.0.1",
 	"developer": "XblazeGMD",
 	"description": "For those who hate empty friend reqs (aka me)",
 	"dependencies": {
