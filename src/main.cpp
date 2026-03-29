@@ -27,7 +27,7 @@ arc::Future<Result<std::string>> requestGDServers(
 	auto ret = res.string().unwrap();
 	auto num = utils::numFromString<int>(ret);
 	if (num.isOk() && num.unwrap() < 0) {
-		co_return Err("Failed to request endpoint '{}': {}", endpoint, num.unwrap());
+		co_return Err("{}", num.unwrap());
 	}
 
 	co_return Ok(ret);
@@ -103,7 +103,7 @@ $on_game(Loaded) {
 						log::debug("Skipping friend request by '{}'", friendReq["1"]);
 					}
 				}
-			} else {
+			} else if (res.unwrapErr() != "-2") { // -2 means there is no friend requests (I think)
 				log::error("{}", res.unwrapErr());
 				showErrorNotification(fmt::format("Could not get friend requests: {}", res.unwrapErr()));
 			}
