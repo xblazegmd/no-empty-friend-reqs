@@ -1,0 +1,17 @@
+{
+	"geode": "5.4.1",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"id": "xblazegmd.no-empty-friend-requests",
+	"name": "No Empty Friend Requests",
+	"version": "v1.0.0",
+	"developer": "XblazeGMD",
+	"description": "For those who hate empty friend reqs (aka me)",
+	"dependencies": {
+		"geode.node-ids": ">=v1.20.0"
+	}
+}
