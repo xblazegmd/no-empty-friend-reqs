@@ -11,3 +11,6 @@ Cuz I get like 10000000 empty friend requests and I don't like leaving them hang
 
 ## License
 This mod is licensed under the **MIT License**. More information about it can be found [here](https://choosealicense.com/licenses/mit/).
+
+## Credits
+- [PNGWing](https://www.pngwing.com/) for the prohibited sign on the logo

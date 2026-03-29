@@ -9,3 +9,6 @@ Setting the setting values for "Interval" and "Cooldown" in a low enough value m
 
 ## License
 This mod is licensed under the **MIT License**. More information about it can be found [here](https://choosealicense.com/licenses/mit/).
+
+## Credits
+- [PNGWing](https://www.pngwing.com/) for the prohibited sign on the logo
