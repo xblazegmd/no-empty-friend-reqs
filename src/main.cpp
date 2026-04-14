@@ -12,6 +12,8 @@ inline void quickErrorNotification(const std::string& msg) {
 }
 
 $on_game(Loaded) {
+	if (!GameToolbox::doWeHaveInternet()) return;
+
 	async::spawn([] -> arc::Future<> {
 		auto accManager = GJAccountManager::get();
 		if (accManager->m_accountID < 0 || accManager->m_GJP2.empty()) {
