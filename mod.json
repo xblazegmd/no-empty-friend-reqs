@@ -13,7 +13,7 @@
 	"description": "For those who hate empty friend reqs (aka me)",
 	"dependencies": {
 		"geode.node-ids": ">=v1.20.0",
-		"xblazegmd.geode-api": ">=1.0.0"
+		"xblazegmd.geode-api": ">=2.0.0"
 	},
 	"links": {
 		"homepage": "https://xblazegmd.vercel.app",
