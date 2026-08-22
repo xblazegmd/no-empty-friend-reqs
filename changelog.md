@@ -1,4 +1,8 @@
 # No Empty Friend Requests
+## 1.1.0
+- Remove ALL error notifications (they were too annoying :P)
+- Update Xblaze's Geode API to v2.1.0
+
 ## 1.0.3
 - Update *Xblaze's Geode API* to 2.0.0
 
