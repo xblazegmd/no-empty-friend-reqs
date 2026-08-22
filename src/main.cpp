@@ -1,8 +1,9 @@
 #include <Geode/Geode.hpp>
 
-#include <xblazegmd.geode-api/include/XblazeAPI.hpp>
 #include <arc/prelude.hpp>
 #include <string>
+
+#include <xblazegmd.geode-api/include/XblazeAPI.hpp>
 
 using namespace geode::prelude;
 
@@ -60,7 +61,7 @@ $on_game(Loaded) {
 				}
 			} else if (res.unwrapErr() != -2) { // -2 means there is no friend requests (I think)
 				log::error("{}", res.unwrapErr());
-				quickErrorNotification(fmt::format("Could not get friend requests: {}", res.unwrapErr()));
+				xblazeapi::quickErrorNotificationTS(fmt::format("Could not get friend requests: {}", res.unwrapErr()));
 			}
 
 			co_await xblazeapi::sleepSecs(Mod::get()->getSettingValue<int64_t>("interval"));
