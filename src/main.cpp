@@ -7,11 +7,6 @@
 
 using namespace geode::prelude;
 
-inline void quickErrorNotification(const std::string& msg) {
-	if (!Mod::get()->getSettingValue<bool>("show-errors")) return;
-	xblazeapi::quickErrorNotificationTS(msg);
-}
-
 $on_game(Loaded) {
 	if (!GameToolbox::doWeHaveInternet()) return;
 
@@ -47,8 +42,7 @@ $on_game(Loaded) {
 						));
 
 						if (decRes.isErr()) {
-							log::error("{}", decRes.unwrapErr());
-							quickErrorNotification(fmt::format("Could not decline friend request by '{}': {}", friendReq["1"], decRes.unwrapErr()));
+							log::error("Could not decline friend req by '{}'. {}", friendReq["1"], decRes.unwrapErr());
 						} else {
 							log::info("Successfully declined friend request by '{}'", friendReq["1"]);
 						}
@@ -60,8 +54,7 @@ $on_game(Loaded) {
 					}
 				}
 			} else if (res.unwrapErr() != -2) { // -2 means there is no friend requests (I think)
-				log::error("{}", res.unwrapErr());
-				xblazeapi::quickErrorNotificationTS(fmt::format("Could not get friend requests: {}", res.unwrapErr()));
+				log::error("Could not get friend requests: {}", res.unwrapErr());
 			}
 
 			co_await xblazeapi::sleepSecs(Mod::get()->getSettingValue<int64_t>("interval"));

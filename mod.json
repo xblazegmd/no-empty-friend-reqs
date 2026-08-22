@@ -46,16 +46,6 @@
 				"slider": true
 			}
 		},
-		"show-errors": {
-			"type": "bool",
-			"name": "Show Error Notifications",
-			"description": "Whether to show notifications in the case of any errors",
-			"default": true
-		},
-		"advanced": {
-			"type": "title",
-			"name": "Advanced Options"
-		},
 		"timeout": {
 			"type": "int",
 			"name": "Timeout",
