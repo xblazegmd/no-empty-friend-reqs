@@ -3,6 +3,9 @@
 # No Empty Friend Requests
 For those who hate empty friend reqs (aka me lol)
 
+> [!IMPORTANT]
+> This mod is **discontinued** due to an update to the Geometry Dash servers that makes you **unable to send a message with a friend request** (the request will appear in the other player's profile as not having a message). Therefore this mod now effectively blocks *every single friend request you recieve*, which obviously isn't ideal. Please make sure to disable this mod if you still want to recieve friend requests
+
 > [!WARNING]
 > Setting the setting values for "Interval" and "Cooldown" in a low enough value may cause you to get *rate limited*, so be careful!
 
